@@ -7,10 +7,12 @@ public class AnimationsUI : MonoBehaviour
 {
     public GameObject menu;
     public GameObject help;
+	private Animator anim;
 
     private void Start()
     {
         LeanTween.moveX(help, 0, 0.3f);
+		anim = menu.GetComponent<Animator>();
     }
 
     public void closeMenu()
@@ -21,7 +23,9 @@ public class AnimationsUI : MonoBehaviour
 
     public void showMenu()
     {
-        LeanTween.moveX(help, 42f, 0.3f);
-        LeanTween.moveY(menu, -23f, 0.6f);
+		anim.SetBool("Entry", true);
+		this.gameObject.SetActive(false);
+		//LeanTween.moveX(help, 42f, 0.3f);
+        //LeanTween.moveY(menu, -23f, 0.6f);
     }
 }
