@@ -9,13 +9,25 @@ public class Animations : MonoBehaviour
     public GameObject menu;
     public GameObject help;
 
+    // Animators
+    private Animator animMenu;
+    private Animator animHelp;
+
     private void Start()
     {
-        help.GetComponent<Animator>().SetBool("isShowMenu", false);
+        animMenu = menu.GetComponent<Animator>();
+        animHelp = help.GetComponent<Animator>();
     }
 
     public void showMenu()
     {
-        menu.GetComponent<Animator>().SetBool("isShowMenu", true);
+        animMenu.SetBool("IsShowMenu", true);
+        animHelp.SetBool("IsShowMenu", true);
+    }
+
+    public void closeMenu()
+    {
+        animHelp.SetBool("IsShowMenu", false);
+        animMenu.SetBool("IsShowMenu", false);
     }
 }

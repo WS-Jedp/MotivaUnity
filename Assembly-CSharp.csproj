@@ -98,7 +98,6 @@
     <Compile Include="Assets\Scripts\Animations.cs" />
     <Compile Include="Assets\Scripts\InteractionMissions.cs" />
     <Compile Include="Assets\Scripts\InteractionsChat.cs" />
-    <Compile Include="Assets\Scripts\ScreensFlow.cs" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\LeanTween\License.txt" />
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
