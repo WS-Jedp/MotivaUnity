@@ -25,7 +25,8 @@ public class InteractionMissions : MonoBehaviour
     void Start()
     {
         currentMission = PlayerPrefs.GetInt("currMission", 0);
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/missions.json");
+        TextAsset file = Resources.Load("missions") as TextAsset;
+        string json = file.ToString();
         missions = JsonUtility.FromJson<MissionInformation>(json);
 
         currentObjective.text = missions.missions[currentMission];
