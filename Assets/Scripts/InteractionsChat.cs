@@ -9,7 +9,7 @@ using System.IO;
 public class OptionsMessages
 {
     public int currMsg = 0;
-    public string[] files = { "tips.json", "motivation.json" };
+    public string[] files = { "tips", "motivation" };
     public int currTypeMsg = 0;
 }
 
@@ -42,21 +42,24 @@ public class InteractionsChat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/" + currentsMsgs.files[setCurrentFile()]);
+        TextAsset file = Resources.Load(currentsMsgs.files[setCurrentFile()]) as TextAsset;
+        string json = file.ToString();
         Messages msgs = JsonUtility.FromJson<Messages>(json);
         msgTxt.text = setCurrentMessage(msgs);
     }   
 
     public void showTip()
     {
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/" + currentsMsgs.files[0]);
+        TextAsset file = Resources.Load(currentsMsgs.files[0]) as TextAsset;
+        string json = file.ToString();
         Messages msgs = JsonUtility.FromJson<Messages>(json);
         msgTxt.text = setCurrentMessage(msgs);
     }
 
     public void showMotivation()
     {
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/" + currentsMsgs.files[1]);
+        TextAsset file = Resources.Load(currentsMsgs.files[1]) as TextAsset;
+        string json = file.ToString();
         Messages msgs = JsonUtility.FromJson<Messages>(json);
         msgTxt.text = setCurrentMessage(msgs);
     }
