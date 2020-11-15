@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnlockTrophy : MonoBehaviour
+public class UnlockTrophy : PlayerPrefsX
 {
     public GameObject[] Medals;
 
     // The current mission of the application
-    private int currentMission = 1;
+    private bool[] currentMission;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i <= currentMission; i++)
+
+        currentMission = PlayerPrefsX.GetBoolArray("missionsAccomplished", false, 1);
+        for (int i = 0; i <= currentMission.Length - 1; i++)
         {
-            Medals[i].GetComponent<Animator>().SetBool("firstMission", true);
+            if (currentMission[i] == true) {
+                Medals[i].GetComponent<Animator>().SetBool("firstMission", true);
+            }
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

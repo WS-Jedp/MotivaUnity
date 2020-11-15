@@ -35,7 +35,7 @@ public class InteractionsChat : MonoBehaviour
     private static string setCurrentMessage(Messages file)
     {
         System.Random randomMsg = new System.Random();
-        string currMsg = file.data[randomMsg.Next(0, 2)];
+        string currMsg = file.data[randomMsg.Next(0, file.data.Length - 1)];
         return currMsg;
     }
 
