@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Animations.cs" />
     <Compile Include="Assets\Scripts\InteractionMissions.cs" />
     <Compile Include="Assets\Scripts\InteractionsChat.cs" />
+    <Compile Include="Assets\Scripts\PlayerPrefsX.cs" />
     <Compile Include="Assets\Scripts\UnlockTrophy.cs" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\LeanTween\License.txt" />
