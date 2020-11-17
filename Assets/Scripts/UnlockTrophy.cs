@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UnlockTrophy : PlayerPrefsX
 {
     public GameObject[] Medals;
+    public Text Title;
+    public Text Text;
 
     // The current mission of the application
     private bool[] currentMission;
@@ -15,12 +17,19 @@ public class UnlockTrophy : PlayerPrefsX
     {
 
         currentMission = PlayerPrefsX.GetBoolArray("missionsAccomplished", false, 1);
-        for (int i = 0; i <= currentMission.Length - 1; i++)
+        for (int i = 0; i < currentMission.Length; i++)
         {
             if (currentMission[i] == true) {
                 Medals[i].GetComponent<Animator>().SetBool("firstMission", true);
             }
         }
+    }
+
+    private void showMissionFinished(GameObject Medal)
+    {
+        Medal.GetComponent<Animator>().SetBool("showMission", true);
+        Title.text = "Hello world";
+        Text.text = "Hello world 2";
     }
 
 }

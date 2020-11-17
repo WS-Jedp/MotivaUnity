@@ -48,5 +48,6 @@ public class InteractionMissions : PlayerPrefsX
     public void showMissionMessage()
     {
         msgTxt.text = missions.messages[currentMission];
+        MissionDone();
     }
 }
